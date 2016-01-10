@@ -18,10 +18,10 @@ PSKDemodulation::PSKDemodulation() {
 }
 
 PSKDemodulation::PSKDemodulation(float Time, float SamplingFrequency,
-                                 const std::vector<int>& BitesVector)
+                                 const std::vector<int> &BitesVector)
     : PSKModulation(Time, SamplingFrequency, BitesVector) {
   modulatedSignal = getBuffer();
-  
+
   generateDemodulation(BitesVector);
   drawChart((char *)"PSK_After_multiplication", multiBuffer);
   drawChart((char *)"PSK_Demodulation", demodulatedSignal);
@@ -46,29 +46,29 @@ void PSKDemodulation::generateDemodulation(const std::vector<int> BitesVector) {
 
   for (auto x : BitesVector) {
     std::cout << i << ". bit's value: " << x << std::endl;
-      for (int j = 0; j < 100; j++) {
-        bit = (i * 100) + j; 
-        multiBuffer[bit] = modulatedSignal[bit] * 
-                    this->amplitude * 
-                    sin((2 * M_PI * (this->signalFrequency / 2) * bit) / 100);
-        this->sum +=multiBuffer[bit];
-        demodulatedSignal[bit] = this->sum;
-      }
-  this->sum = 0;
+    for (int j = 0; j < 100; j++) {
+      bit = (i * 100) + j;
+      multiBuffer[bit] =
+          modulatedSignal[bit] * this->amplitude *
+          sin((2 * M_PI * (this->signalFrequency / 2) * bit) / 100);
+      this->sum += multiBuffer[bit];
+      demodulatedSignal[bit] = this->sum;
+    }
+    this->sum = 0;
     ++i;
   }
 
   i = 0;
   for (auto x : BitesVector) {
-      for (int j = 0; j < 100; j++) {
-        bit = (i * 100) + j; 
-        if (demodulatedSignal[bit] > 0) {
-          binarySignal[bit] = 1;
-        } else {
-          binarySignal[bit] = 0;
-        } 
+    for (int j = 0; j < 100; j++) {
+      bit = (i * 100) + j;
+      if (demodulatedSignal[bit] > 0) {
+        binarySignal[bit] = 1;
+      } else {
+        binarySignal[bit] = 0;
       }
+    }
     ++i;
   }
-  binarySignal[bit-1] = 1.2f;
+  binarySignal[bit - 1] = 1.2f;
 }

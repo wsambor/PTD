@@ -15,7 +15,7 @@ class PSKModulation : public SinusDrawing {
 
   void generateModulation(const std::vector<int>& bitesVector);
   void drawPSKChart();
-  float *getBuffer();
+  float* getBuffer();
 
  protected:
   float* pskBuffer;

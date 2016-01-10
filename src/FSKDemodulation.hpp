@@ -12,9 +12,9 @@ class FSKDemodulation : public FSKModulation {
 
   FSKDemodulation();
   FSKDemodulation(float Time, float SamplingFrequency,
-                const std::vector<int>& BitesVector);
+                  const std::vector<int>& BitesVector);
   ~FSKDemodulation();
-  
+
   void generateDemodulation(const std::vector<int>& BitesVector);
   void drawMulti1Chart();
   void drawMulti2Chart();
@@ -22,7 +22,8 @@ class FSKDemodulation : public FSKModulation {
   void drawBinaryChart();
 
  private:
-  float *modulatedSignal, *demodulatedSignal, *multiBuffer1, *multiBuffer2, *binarySignal;
+  float* modulatedSignal, *demodulatedSignal, *multiBuffer1, *multiBuffer2,
+      *binarySignal;
   float sumHighFrequency, sumLowFrequency;
 };
 

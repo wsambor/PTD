@@ -21,14 +21,17 @@ int main(int argc, char* argv[]) {
 
   ////DEMODULACJE_ASK__PSK__FSK______________________________________________
   ////Demodulacja ASK
-  // ASKDemodulation exampleASKDemodulation(exampleTime, exampleSamplingFrequency, returnBitesVector());
+  // ASKDemodulation exampleASKDemodulation(exampleTime,
+  // exampleSamplingFrequency, returnBitesVector());
 
   ////Demodulacja PSK
-  // PSKDemodulation examplePSKDemodulation(exampleTime, exampleSamplingFrequency, returnBitesVector());
+  // PSKDemodulation examplePSKDemodulation(exampleTime,
+  // exampleSamplingFrequency, returnBitesVector());
 
-  ///Demodulacja FSK
-  FSKDemodulation exampleFSKDemodulation(exampleTime, exampleSamplingFrequency, returnBitesVector());
-  
+  /// Demodulacja FSK
+  FSKDemodulation exampleFSKDemodulation(exampleTime, exampleSamplingFrequency,
+                                         returnBitesVector());
+
   ////MODULACJE__ASK__FSK__PSK_______________________________________________
   ////Modulacja ASK
   // ASKModulation exampleASKModulation(exampleTime, exampleSamplingFrequency,
@@ -42,12 +45,12 @@ int main(int argc, char* argv[]) {
 
   ////GENEROWANIE WYKRESU FUNKCJI SINUS_____________________________________
   // SinusDrawing exampleObject(exampleTime, exampleSamplingFrequency);
-  
-  ////GENEROWANIE WYKRESU WIDMA_____________________________________________ 
+
+  ////GENEROWANIE WYKRESU WIDMA_____________________________________________
   // SpectrumDrawing exampleSpectrumObject(exampleTime,
   // exampleSamplingFrequency);
 
-  ///GENEROWANIE MODULACJI__AM__PM__________________________________________
+  /// GENEROWANIE MODULACJI__AM__PM__________________________________________
   // Aby uzyskać ciekawy rezultatat w konstruktorze sinusDrawing: wielkosc
   // amplitudy wprowadzic równą 5.0f,
   // częstotliwość

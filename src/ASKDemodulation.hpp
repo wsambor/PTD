@@ -12,13 +12,13 @@ class ASKDemodulation : public ASKModulation {
 
   ASKDemodulation();
   ASKDemodulation(float Time, float SamplingFrequency,
-                const std::vector<int>& BitesVector);
+                  const std::vector<int>& BitesVector);
   ~ASKDemodulation();
-  
+
   void generateDemodulation(const std::vector<int>& BitesVector);
 
  private:
-  float *modulatedSignal, *demodulatedSignal, *multiBuffer, *binarySignal;
+  float* modulatedSignal, *demodulatedSignal, *multiBuffer, *binarySignal;
   float sum;
 };
 

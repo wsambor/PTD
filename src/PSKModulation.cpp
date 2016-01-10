@@ -23,9 +23,7 @@ PSKModulation::~PSKModulation() {
   if (pskBuffer) delete[](pskBuffer);
 }
 
-float *PSKModulation::getBuffer() {
-  return pskBuffer;
-}
+float* PSKModulation::getBuffer() { return pskBuffer; }
 
 void PSKModulation::generateModulation(const std::vector<int>& bitesVector) {
   pskBuffer = allocateBuffer(this->ttime, this->samplingFrequency);

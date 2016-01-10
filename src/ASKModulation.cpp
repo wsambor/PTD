@@ -39,17 +39,15 @@ void ASKModulation::generateModulation(const std::vector<int>& bitesVector) {
             sin((2 * M_PI * (this->signalFrequency / 2) * bit) / 100);
       } else {
         askBuffer[bit] = 0;
-            // 0.5 * this->amplitude *
-            // sin((2 * M_PI * (this->signalFrequency / 2) * bit) / 100);
+        // 0.5 * this->amplitude *
+        // sin((2 * M_PI * (this->signalFrequency / 2) * bit) / 100);
       }
     }
     ++i;
   }
 }
 
-float *ASKModulation::getBuffer() {
-  return askBuffer;
-}
+float* ASKModulation::getBuffer() { return askBuffer; }
 
 void ASKModulation::drawASKChart() {
   char* commandsForGnuplot[] = {

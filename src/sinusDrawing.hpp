@@ -15,7 +15,7 @@ class SinusDrawing {
   float* allocateBuffer(float ttime, float samplingFrequency);
   void saveAsCSVFile();
 
-  void drawChart(char *chartName, float *buffer);
+  void drawChart(char* chartName, float* buffer);
 
  protected:
   float ttime, samplingFrequency, amplitude, startPoint, signalFrequency, N;

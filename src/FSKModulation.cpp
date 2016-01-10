@@ -23,9 +23,7 @@ FSKModulation::~FSKModulation() {
   if (fskBuffer) delete[](fskBuffer);
 }
 
-float *FSKModulation::getBuffer() { 
-  return fskBuffer;
-}
+float* FSKModulation::getBuffer() { return fskBuffer; }
 
 void FSKModulation::generateModulation(const std::vector<int>& bitesVector) {
   fskBuffer = allocateBuffer(this->ttime, this->samplingFrequency);

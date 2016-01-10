@@ -16,7 +16,7 @@ class ASKModulation : public SinusDrawing {
 
   void generateModulation(const std::vector<int>& bitesVector);
   void drawASKChart();
-  float *getBuffer();
+  float* getBuffer();
 
  protected:
   float* askBuffer;

@@ -1,4 +1,4 @@
- #ifndef PSK_DEMODULATION_HPP
+#ifndef PSK_DEMODULATION_HPP
 #define PSK_DEMODULATION_HPP
 
 #include <vector>
@@ -12,13 +12,13 @@ class PSKDemodulation : public PSKModulation {
 
   PSKDemodulation();
   PSKDemodulation(float Time, float SamplingFrequency,
-                const std::vector<int>& BitesVector);
+                  const std::vector<int>& BitesVector);
   ~PSKDemodulation();
-  
+
   void generateDemodulation(const std::vector<int> BitesVector);
 
  private:
-  float *modulatedSignal, *demodulatedSignal, *multiBuffer, *binarySignal;
+  float* modulatedSignal, *demodulatedSignal, *multiBuffer, *binarySignal;
   float sum;
 };
 
