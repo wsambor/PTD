@@ -11,7 +11,8 @@ SOURCES = ../src/main.cpp \
 		  ../src/PSKModulation.cpp \
 		  ../src/ASKDemodulation.cpp \
 		  ../src/PSKDemodulation.cpp \
-		  ../src/FSKDemodulation.cpp
+		  ../src/FSKDemodulation.cpp \
+		  ../src/hammingCode.cpp
 
 NAME = prog
 

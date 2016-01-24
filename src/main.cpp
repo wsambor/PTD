@@ -12,36 +12,44 @@
 #include "ASKDemodulation.hpp"
 #include "PSKDemodulation.hpp"
 #include "FSKDemodulation.hpp"
+#include "hammingCode.hpp"
 
-std::vector<int> returnBitesVector();
+std::vector<int> returnBitesVector(int size);
 
 int main(int argc, char* argv[]) {
   float exampleTime = 1.0f;
   float exampleSamplingFrequency = 900.0f;
 
+  std::vector<int> input;
+  input = returnBitesVector(4);
+
+  //Hamming_code___________________________________________________________
+  HammingCode richard(input);
+
   ////DEMODULACJE_ASK__PSK__FSK______________________________________________
   ////Demodulacja ASK
   // ASKDemodulation exampleASKDemodulation(exampleTime,
-  // exampleSamplingFrequency, returnBitesVector());
+  // exampleSamplingFrequency, returnBitesVector(10));
 
   ////Demodulacja PSK
   // PSKDemodulation examplePSKDemodulation(exampleTime,
-  // exampleSamplingFrequency, returnBitesVector());
+  // exampleSamplingFrequency, returnBitesVector(10));
 
   /// Demodulacja FSK
-  FSKDemodulation exampleFSKDemodulation(exampleTime, exampleSamplingFrequency,
-                                         returnBitesVector());
+  // FSKDemodulation exampleFSKDemodulation(exampleTime,
+  // exampleSamplingFrequency,
+  //                                        returnBitesVector(10));
 
   ////MODULACJE__ASK__FSK__PSK_______________________________________________
   ////Modulacja ASK
   // ASKModulation exampleASKModulation(exampleTime, exampleSamplingFrequency,
-  //                                    returnBitesVector());
+  //                                    returnBitesVector(10));
 
   // FSKModulation exampleFSKModulation(exampleTime, exampleSamplingFrequency,
-  //                                    returnBitesVector());
+  //                                    returnBitesVector(10));
 
   // PSKModulation examplePSKModulation(exampleTime, exampleSamplingFrequency,
-  //                                    returnBitesVector());
+  //                                    returnBitesVector(10));
 
   ////GENEROWANIE WYKRESU FUNKCJI SINUS_____________________________________
   // SinusDrawing exampleObject(exampleTime, exampleSamplingFrequency);
